@@ -10,7 +10,7 @@ a {
 .login-page {
   width: 100%;
   position: absolute;
-  top: 200px;
+  top: 100px;
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -78,8 +78,11 @@ a {
       padding-bottom: 7px;
       margin-top: 5px;
       margin-bottom: 5px; }
-  .signup .submit {
+  .signup .signup-submit {
     margin-top: 20px; }
+    .signup .signup-submit input {
+      height: 30px;
+      line-height: 30px; }
   .signup .signup-login {
     text-align: center;
     padding-bottom: 50px;
@@ -94,7 +97,7 @@ a {
 header {
   height: 77px;
   width: 100%;
-  position: fixed;
+  /* position: fixed; */
   top: 0;
   z-index: 2;
   background-color: white;

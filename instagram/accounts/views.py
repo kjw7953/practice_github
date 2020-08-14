@@ -27,23 +27,19 @@ def login(request):
             return redirect('/feeds/')
     return render(request, 'accounts/login.html')
 
+
 def logout(request):
     return render(request, 'accounts/logout.html')
-    
 
-def follow_manager(request, pk):
-    follow_from = Profile.objects.get(user_id = request.user.id)
-    follow_to = Profile.objects.get(user_id = pk)
 
-    try:
-        following_already = Follow.objects.get(follow_to = follow_to, follow_from = follow_from)
-    except Follow.DoesNotExist:
-        following_already = None
+def follow_manager(request, id):
+  follow_from = Profile.objects.get(user_id=request.user.id)
+  follow_to = Profile.objects.get(user_id=id)
+  follow_already = Follow.objects.filter(follow_from=follow_from, follow_to=follow_to)
 
-    if following_already:
-        following_already.delete()
-    else:
-        Follow.objects.create(follow_to = follow_to, follow_from = follow_from)
-        
-    return redirect('/feeds/')
-
+  if follow_already:
+    follow_already.delete()
+  else:
+    Follow.objects.create(follow_from=follow_from, follow_to=follow_to)
+  return redirect('/feeds/')
+  

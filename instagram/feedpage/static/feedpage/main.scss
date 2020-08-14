@@ -14,7 +14,7 @@ a {
 .login-page {
     width: 100%;
     position: absolute;
-    top: 200px;
+    top: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -109,8 +109,12 @@ a {
         }
     }
 
-    .submit {
+    .signup-submit {
         margin-top: 20px;
+        input {
+          height: 30px;
+          line-height: 30px;
+        }
     }
 
     .signup-login {
